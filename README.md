@@ -21,7 +21,7 @@ This project provides a tool to extract audio from a video, transcribe the speec
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/truongbill003/video-to-subtitle-converter.git
+    git clone https://github.com/billtruong003/video-to-subtitle-converter.git
     cd video-to-subtitle-converter
     ```
 
