@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #ffae43;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #d18e36;
+        }
+
+        select {
+            margin: 10px 0;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        label {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Video</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">Choose a video file:</label>
+            <input type="file" name="file" id="file" accept="video/*">
+
+            <label for="language">Language:</label>
+            <select name="language" id="language">
+                <option value="en">English</option>
+                <option value="vi">Vietnamese</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="ja">Japanese</option>
+                <!-- Add other languages as needed -->
+            </select>
+
+            <button type="submit">Upload and Process</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>
