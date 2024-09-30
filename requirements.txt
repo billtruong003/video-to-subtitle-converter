@@ -1,3 +1,7 @@
-flask==2.1.1
-whisper==1.0
-ffmpeg-python==0.2.0
+Flask==2.1.2
+torch==2.4.0
+torchvision==0.15.0
+torchaudio==2.4.0
+whisper
+psutil
+ffmpeg-python
